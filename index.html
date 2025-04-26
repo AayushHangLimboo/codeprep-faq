@@ -1,96 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodePrep FAQ</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: #00ffff;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid #00ffff33;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+    h1 {
+      text-align: center;
+      color: #00ffff;
+      text-shadow: 0 0 3px #00ffff;
+    }
+    .faq-item {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #00ffff22;
+      padding-bottom: 10px;
+    }
+    .faq-question {
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 5px;
+      color: #00ffff;
+      text-shadow: 0 0 2px #00ffff;
+      padding: 10px;
+      background-color: #0a0a0a;
+      border-radius: 6px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .faq-question:hover {
+      background-color: #111;
+      transform: scale(1.02);
+    }
+    .faq-answer {
+      display: none;
+      padding: 10px 10px 0 10px;
+      color: #b0eaff;
+    }
+    .faq-question.active {
+      background-color: #111;
+    }
+    .faq-question.active + .faq-answer {
+      display: block;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      color: #00ffff;
+      background-color: #0a0a0a;
+      border-top: 1px solid #00ffff33;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+
+    .footer-link {
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    .footer-link:hover {
+      color: #b0eaff;
+      text-shadow: 0 0 5px #00ffff;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="faq-item">
+      <div class="faq-question">▶ What is CodePrep Academy?</div>
+      <div class="faq-answer">CodePrep is an online platform offering courses and coaching for technical interview preparation and coding skill enhancement.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">▶ Who can join CodePrep courses?</div>
+      <div class="faq-answer">Anyone interested in improving their programming and interview skills can join—students, job seekers, and professionals.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">▶ What kind of courses are available?</div>
+      <div class="faq-answer">We offer courses in Data Structures, Algorithms, Problem Solving, MERN Stack, and more.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">▶ How can I enroll?</div>
+      <div class="faq-answer">Visit our official website, choose your desired course, and follow the registration process.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">▶ Is there any personalized coaching?</div>
+      <div class="faq-answer">Yes, one-on-one mentorship is available to meet individual learning goals.</div>
+    </div>
+  </div>
+
+  <script>
+    const questions = document.querySelectorAll('.faq-question');
+
+    questions.forEach((question) => {
+      question.addEventListener('click', () => {
+        question.classList.toggle('active');
+        if (question.textContent.trim().startsWith('▶')) {
+          question.textContent = question.textContent.replace('▶', '▼');
+        } else {
+          question.textContent = question.textContent.replace('▼', '▶');
+        }
+      });
+    });
+  </script>
+  <footer class="footer">
     <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
+      &copy; 2025 CodePrep Academy. All rights reserved. |
+      <a href="https://codeprep.in/#" class="footer-link">Home</a> |
+      <a href="" class="footer-link">About</a> |
+      <a href="" class="footer-link">Contacts</a> |
     </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
+  </footer>
+</body>
 </html>
